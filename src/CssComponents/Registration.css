@@ -1,0 +1,219 @@
+
+
+.Container {
+margin-left: 27vw;
+  margin-top: 20px;
+    margin-bottom
+    : 20px;
+    background-color: white;
+    width: 40vw;
+     height:180vh;
+    padding: 30px;       /* 🔑 dagdag padding para may space sa loob */
+    border-radius: 10px;
+    color: black;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* optional para may ganda */
+   
+    border: 1px solid #958f8f;
+}
+
+   .Container h2 {
+    margin-left:12.35vw;
+    margin-top: 0;        /* alisin yung default margin-top */
+    margin-bottom: 20px;
+    font-size: 1.80em;
+    color:black;
+    font-family: 'Open Sans', sans-serif;
+}
+
+ .Container p {
+  margin-left: 11vw;
+    margin-bottom: 30px;  /* space sa baba ng description */
+    color: #444;
+    font-size: 14px;
+}
+.Container input{
+    margin-left: 4vw;
+margin-top: 10px;
+margin-bottom: 20px;
+    width: 30vw;
+    height: 5vh;
+    background-color:white;
+    border: 2px solid #999b9e;
+    border-radius: 10px;
+    font-size: 17px;
+    color:black;
+ padding-left: 20px;
+
+ font-family:  'Open Sans', sans-serif;
+
+}
+input:focus {
+  outline: none;
+  border: 2px solid rgb(88, 88, 233);
+}
+input[type="date"]{
+    color:rgb(99, 87, 87);
+    background-color: white;
+
+}
+     input[type="date"]:valid {
+  color: black;
+}
+
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+ cursor: pointer;
+  filter: invert(34%) sepia(91%) saturate(1400%) hue-rotate(200deg) brightness(100%) contrast(90%);
+}
+
+.Container select {
+    margin-left: 4vw;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 31vw;
+  height: 5vh;
+  background-color: white;
+  border: 2px solid #999b9e;
+  border-radius: 10px;
+  font-size: 17px;
+  padding-left: 20px;
+  font-family: 'Open Sans', sans-serif;
+  color: rgb(125, 129, 141); 
+}
+select:focus {
+  outline: none;
+    border: 2px solid rgb(88, 88, 233);
+ 
+}.Container select:valid {
+  color: black;
+background-color: white;
+}
+.Container label{
+     font-family: Arial, sans-serif;
+    font-size: 18px;
+    color:black;
+
+ display:flex;
+align-items: flex-start;
+justify-self: flex-start;
+margin-left: 70px;
+
+}
+.required-asterisk {
+  color: red;
+  margin-left: 2px;
+}
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+/* Para sa Chrome, Safari, at iba pa */
+input::-webkit-credentials-auto-fill-button,
+input::-webkit-clear-button,
+input::-webkit-inner-spin-button {
+  display: none !important;
+}
+
+
+
+/* Para sa unang span (yung *) */
+.input-group label .required {
+  color: red;
+  margin-left: 5px;
+}
+
+/* Para sa eye icon */
+.input-group .eye {
+  cursor: pointer;
+  color: gray;
+  margin-left: -30px;
+
+}
+input[type="file"] {
+  border: none;
+border-radius: 10px;
+  background-color: #e9e1e1;
+font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+input[type="file"]::file-selector-button {
+border: none;
+background-color: rgb(156, 152, 152);
+  padding: 8.50px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+color: white;
+margin-left: -20px;
+}
+.file-preview {
+margin-left: 5vw;
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  border-radius: 8px;
+  width: 25vw;
+  background-color: #f9f9f9;
+}
+
+.file-image {
+  width: 80px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-left: 30px;
+
+}
+
+.file-name {
+
+  font-size: 14px;
+  color: #333;
+  flex-grow: 1;
+}
+
+.remove-button {
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 25px;
+  text-align: center;
+  transition: background 0.2s ease;
+  margin-left: 10px
+  ;
+
+}
+
+.remove-btn:hover {
+  background: darkred;
+
+      
+}
+.sumbit-button{
+  border:none;
+  height: 5vh;
+  width: 31.30vw;
+  border-radius: 10px;
+  background-color:#0092ca;
+  color:white;
+  border-radius: 10px;
+  margin-left: 10%;
+        transition: 0.50s;
+  margin-top: 20px;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  
+  flex: 1 1 30%;
+}
+
+a{
+  text-decoration: none;
+  color: #0092ca;
+}

@@ -1,0 +1,70 @@
+
+.homepage-container{
+  height: 100vh;
+  width: 100%;
+  margin: 0px;
+  background: linear-gradient(to top,#94aaed,#6883d3,#455ea9,#1E3A8E 70% ,#193178 80%,  #0e1b41 100%);
+
+}
+.TEXT{
+  display: flex;
+  gap:30px;
+  margin-top: 25vh;
+  margin-left: 12vw;
+}
+.barangay{
+  color:rgb(255, 255, 255);
+  font-size: 2em;
+  font-family: 'Open Sans', sans-serif;
+
+}.portal{
+  color: #FBC100;
+  font-size: 2em;
+  font-family: 'Open Sans', sans-serif;
+} .pcolor{
+  color: white;
+   font-family: 'Open Sans', sans-serif;
+font-size: 18px;
+margin-left: 12vw; 
+}
+.login { 
+  display: flex;              /* gamitin flexbox */
+  align-items: center;        /* vertical center */
+  justify-content: center;    /* horizontal center */
+          
+  color: white;
+  font-size: 20px;
+    font-weight: bold;
+  border: 3px solid white;
+  margin-top: 5vh;
+  border-radius: 10px;
+  margin-left: 35vw;
+  height: 40px;
+  width: 200px;
+  text-decoration: none;      /* tanggal underline */
+}
+
+.loginIcon {
+  font-size: 24px;  /* sakto lang na size */
+}
+
+.request{
+    display: flex;              /* gamitin flexbox */
+  align-items: center;        /* vertical center */
+  justify-content:center; 
+margin-top: -5.50vh ;
+border-radius: 10px;
+  border: 2px solid #FBC100;
+background-color: #FBC100; 
+height: 40px;
+width: 260px;
+font-size: 20px;
+  font-weight: bold;
+margin-left: 12vw;
+font-family: 'Open Sans', sans-serif;
+}
+document-icon{
+  font-size: 24px;  /* sakto lang na size */
+  margin-right: 5px;
+  color: black;
+}

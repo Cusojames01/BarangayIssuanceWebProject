@@ -1,0 +1,63 @@
+body{
+    margin:0px;
+    padding: 0px;
+}
+nav{
+display: flex;
+align-items: center;
+justify-content: flex-end;
+flex-wrap:wrap;
+background:linear-gradient(90deg, #ffffff 0%, #047a9b 0%, #0012ae 40%, #010f85 60%, #000851 80%,  #00094c 100%  );
+margin: 0px;
+}
+nav a{
+  display: flex;         /* gawin flex container */
+  align-items: center;   /* icon + text pantay */
+  gap: 6px;    
+    text-decoration: none;
+     margin-right:8vh;
+    width: 70px;
+    height: 10vh;
+    color: white;
+    text-align: center;
+    border-radius: 50px;
+}
+nav a:hover {
+  color: #3498db;
+
+}
+.active-link{
+ text-decoration: underline;
+}
+
+.login-icon {
+  
+  color: rgb(255, 255, 255);
+  font-size: 30px;  /* laki ng icon */
+  margin-right: 5px;
+  vertical-align: middle; /* pantay sa text */
+
+}
+.login-icon :hover{
+      color: #3498db;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 40vw;
+}
+
+.logo-container .logo {
+  height: 60px;
+  width: 60px;
+
+}
+
+.logo-container span {
+  color: white;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+ 
+}
