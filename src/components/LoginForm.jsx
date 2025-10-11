@@ -2,6 +2,7 @@ import '../CssComponents/LoginForm.css';
 import {useState} from 'react'
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import AdminDashBoard from '../Admin DashBoard/AdminDashBoard';         
 function LoginForm(){
     const [showpassword, setshowpassword] = useState(false);
    const [userdata,setUserData]= useState({Username:"", Password:""})
@@ -33,7 +34,7 @@ function LoginForm(){
              </span>
             </div >
             <p className='forgotpass'>Forgot Password?</p>
-            <button type="submit">Login</button>
+           <Link to={'/dashboard'}> <button type="submit"  >Login</button></Link>
             <p className='link'>
         Don't have an account? <Link to="/registration">Sign Up</Link>
         </p>
