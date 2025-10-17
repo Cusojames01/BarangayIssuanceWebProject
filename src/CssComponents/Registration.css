@@ -149,32 +149,35 @@ color: white;
 margin-left: -20px;
 }
 .file-preview {
-margin-left: 5vw;
+  margin-left: 5vw;
   border: 1px solid #ccc;
-  padding: 6px 12px;
+  padding: 10px;
   border-radius: 8px;
   width: 25vw;
   background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.image-preview {
+  position: relative;
+  display: inline-block;
 }
 
 .file-image {
-  width: 80px;
-  height: 50px;
+  width: 100px;
+  height: 60px;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: 8px;
   border: 1px solid #ddd;
-  margin-left: 30px;
-
-}
-
-.file-name {
-
-  font-size: 14px;
-  color: #333;
-  flex-grow: 1;
 }
 
 .remove-button {
+    position: absolute;
+  top: -8px;
+ right: -15px;
   background: red;
   color: white;
   border: none;
@@ -182,13 +185,27 @@ margin-left: 5vw;
   width: 25px;
   height: 25px;
   cursor: pointer;
-  font-size: 16px;
-  line-height: 25px;
-  text-align: center;
-  transition: background 0.2s ease;
-  margin-left: 10px
-  ;
 
+  display: flex;               /* 🔑 para ma-center sa loob */
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.remove-button:hover {
+  background: darkred;
+}
+
+.file-name {
+  font-size: 14px;
+  color: #333;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .remove-btn:hover {
