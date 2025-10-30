@@ -1,3 +1,7 @@
+.split{
+  margin-left: -100px;
+    margin-right: -100px;
+}
 
 .sidebar {
   position: fixed;
@@ -5,7 +9,7 @@
   top: 0;
   width: 200px;
   height: 100%;
-  background-color: #1f2937; /* dark sidebar */
+  background-color: #1f3337; /* dark sidebar */
   display: flex;
   flex-direction: column;
   padding-top: 20px;
@@ -18,6 +22,8 @@
   margin: 5px 0;
   transition: background-color 0.2s ease;
   border-radius: 5px;
+  font-size: 15px;
+  font-family:  'Open Sans', sans-serif;
 }
 
 .sidebar a:hover {
@@ -31,20 +37,22 @@
 
 /* Table styles */
 .table {
-width: 80vw;
+  width: 80vw; /* dati 80vw, liitan natin para mas visible */
   margin-left: 250px;
   border-collapse: collapse;
   background-color: #fff;
   box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
   border-radius: 8px;
   overflow: hidden;
+  margin-top: 50px;
+  font-size: 14px; /* medyo liitan ng kaunti ang font para proportion */
 }
 
+
 .table th, .table td {
-  padding: 12px 15px;
-  text-align: left;
-  border-bottom: 1px solid #e5e7eb;
+  padding: 8px 10px; /* dati 12px 15px */
 }
+
 
 .table th {
   background-color: #4f46e5;
@@ -106,87 +114,109 @@ button:nth-child(3):hover {
   justify-content: center;
   align-items: center;
   z-index: 999;
+  
 }
 
 .user-modal {
-  background-color: #f8f4f4;
+  position: relative; /* para sa absolute close button */
+  max-width: 800px;
+  width: 90%;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
   overflow-y: auto;
-  scrollbar-color: transparent transparent;
-  border-radius: 12px;
-  height: 70vh;
-  width: 600px;
-  max-width: 90%;
-  box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+  max-height: 90vh;
   display: flex;
   flex-direction: column;
-align-items: center;
-align-content: center;
-  padding: 20px;
+  align-items: center;
+
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
 }
+
+.user-modal::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 .user-modal h2 {
   margin-top: 0;
   margin-bottom: 10px;
   font-size: 24px;
   color: #111827;
+  text-align: center; /* center title */
 }
-.user-modal .user-details  {
+
+/* Close button sa top-right ng modal */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #6c757d;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.close-btn svg {
+  color: white;
+  font-size: 20px;
+}
+
+.close-btn:hover {
+  background-color: #5a6268;
+}
+
+/* Profile pic */
+.profile-avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #007bff;
+  margin-bottom: 15px;
+}
+
+.profile-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.user-details {
   color: #1b1b1c;
-font-size: 20px;
+  font-size: 20px;
   width: 80%;
   line-height: 22px;
   font-family: 'Open Sans', sans-serif;
   margin-top: 10px;
-  margin-left: 100px;
-}
-.user-modal  img.profile-pic {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
+  text-align: center; /* center the text inside modal */
 }
 
-.user-modal  img.id-pic {
-  width: 70%;
-  max-height: 200px;
+/* ID pics */
+.id-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.id-pic-large {
+  width: 350px;
+  height: 220px;
   object-fit: contain;
-  margin: 10px 0;
-  border-radius: 6px;
-  border: 1px solid #b5b7ba;
-  box-shadow: 1px 1px 12px gray;
+  border: 1px solid #ccc;
+  border-radius: 10px;
 }
 
-.close-button{
-  margin-top:10vh;
-  background-color: #4b5563;
-  color: white;
-}
-
-.close-button:hover {
-  background-color: #1f2937;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .sidebar {
-    width: 60px;
-    padding-top: 10px;
-  }
-
-  .sidebar a {
-    font-size: 12px;
-    padding: 10px;
-  }
-
-  .table, .table-container {
-    margin-left: 70px;
-    width: calc(100% - 80px);
-  }
-
-  .user-modal {
-    width: 90%;
-  }
-}
+/* Approval/Reject Modal */
 .approval-modal-overlay {
   position: fixed;
   top: 0;
@@ -262,6 +292,7 @@ font-size: 20px;
   from { opacity: 0; transform: scale(0.9); }
   to { opacity: 1; transform: scale(1); }
 }
+
 /* Status badge style */
 .status-badge {
   padding: 6px 12px;
@@ -272,13 +303,464 @@ font-size: 20px;
 }
 
 .status-badge.pending {
-  background-color: #f1c40f; /* yellow */
+  background-color: #f0d155; /* yellow */
 }
 
 .status-badge.approved {
-  background-color: #2ecc71; /* green */
+  background-color: #30cf72; /* green */
 }
 
 .status-badge.rejected {
-  background-color: #e74c3c; /* red */
+  background-color: #e36c5f; /* red */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60px;
+    padding-top: 10px;
+  }
+
+  .sidebar a {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .table, .table-container {
+    margin-left: 70px;
+    width: calc(100% - 80px);
+  }
+
+  .user-modal {
+    width: 90%;
+  }
+
+  .id-pic-large {
+    width: 80%;
+    height: auto;
+  }
+}
+.feedback-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.feedback-modal {
+  background: #fff;
+  padding: 25px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.feedback-modal.success {
+  border-bottom: 5px solid #28a745;
+}
+
+.feedback-modal.error {
+  border-top: 5px solid #dc3545;
+}
+
+.feedback-modal h3 {
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.feedback-modal .close-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.feedback-modal .close-button:hover {
+  background-color: #0056b3;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+.user-summary{
+
+
+    display: flex;
+    align-items: center;
+    gap: 30px;
+margin-top: 70;
+        margin-left: 250px;
+}
+
+.summary-box {
+    width: 250px;
+    height: 120px;
+    border-bottom: 4px solid gray;
+    border-radius: 5px;
+    display: flex;
+    align-items: center; /* vertically center */
+   padding-left: 30px;
+    margin-top: 60px;
+   box-shadow: 0 6px 6px -2px rgba(91, 13, 113, 0.4);
+}.summary-box:hover{
+    transform: scale(1.05);
+    transition: 0.50s;
+}
+.label {
+    font-size: 20px;
+    margin: 20px;
+    font-family: 'Open Sans', sans-serif;
+  padding-bottom: 50px;
+  color: rgb(158, 156, 156);
+  }
+  .user-summary .count1{
+    margin-left: -85px;
+    font-size: 25px;
+    margin-top: 32px;
+    font-weight:bold;
+        font-family: 'Open Sans', sans-serif;
+  }
+    .user-summary .count2{
+    margin-left: -65px;
+    font-size: 25px;
+    margin-top: 32px;
+    font-weight:bold;
+        font-family: 'Open Sans', sans-serif;
+  }
+    .user-summary .count3{
+    margin-left: -75px;
+    font-size: 25px;
+    margin-top: 32px;
+    font-weight:bold;
+        font-family: 'Open Sans', sans-serif;
+  }
+      .user-summary .count4{
+    margin-left: -70px;
+    font-size: 25px;
+    margin-top: 32px;
+    font-weight:bold;
+        font-family: 'Open Sans', sans-serif;
+  }
+.search-container {
+  display: flex;
+  align-items: center; /* ito ang nag-aayos para center vertically */
+  gap: 5px; /* space sa pagitan ng input at icon */
+  margin-left: 890px;
+  margin-top: 25px;
+}
+
+.search-input {
+  padding: 8px 12px;
+  width: 300px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+
+}
+
+.search-input:focus {
+  border-color: #4b49ac;
+  box-shadow: 0 0 5px rgba(75, 73, 172, 0.3);
+}
+
+
+
+
+
+.Adduser button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.Adduser button:hover {
+  background-color: #0056b3;
+}
+
+.split {
+  border: none;
+  height: 2px;
+  background-color: #4b49ac;
+  border-radius: 10px 0 0 10px; /* pwede shorthand */
+margin-left: 270px;
+margin-right: 80px;
+
+
+
+}
+
+.sidebar-link {
+  color: #fff;
+  text-decoration: none;
+padding: 10px 10px;
+  margin: 5px 0;
+  display: block;
+  transition: all 0.3s ease;
+
+
+
+}
+
+.sidebar-link:hover {
+  background-color: #dfebff;
+  color: white;
+}
+
+.sidebar-link.active-sidebar {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border-radius: 20px 0 0 20px;
+  height: 26px;
+display: flex;
+align-items: center;
+align-content: center;
+  font-size: 14px;
+
+}
+.Adduser{
+  display: flex;
+  justify-content: space-between; /* left-right alignment */
+  align-items: center;            /* vertical center */
+  margin-left: 1300px;
+  margin-bottom: 15px;
+  gap: 15px;   
+  margin-top: -38px;                 /* optional gap sa pagitan */
+}
+
+
+
+.modal-overlay{
+ display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.55);
+
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+/* 🔹 Add User Modal (Landscape) */
+.add-user-modal-vertical {
+  background-color: #ffffff;
+  width: 72vw;
+  max-height: 82vh;
+  overflow-y: auto;
+  border-radius: 16px;
+  border: 1px solid #d1d5db;
+  padding: 45px 60px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  color: #111827;
+  font-family: "Poppins", sans-serif;
+  margin: 40px auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* 🔹 Hide scrollbar (Chrome, Safari) */
+.add-user-modal-vertical::-webkit-scrollbar {
+  display: none;
+}
+
+/* 🔹 Title */
+.add-user-modal-vertical h2 {
+  grid-column: span 2;
+  text-align: center;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 30px;
+  letter-spacing: 0.5px;
+}
+
+/* 🔹 Grid Form Layout */
+.add-user-modal-vertical form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px 50px;
+}
+
+/* 🔹 Labels */
+.add-user-modal-vertical label {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: #1f2937;
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* 🔹 Inputs & Selects */
+.add-user-modal-vertical input,
+.add-user-modal-vertical select {
+  width: 100%;
+  height: 48px;
+  background-color: #f9fafb;
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #111827;
+  padding-left: 15px;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.25s ease;
+  margin-bottom: 10px;
+}
+
+.add-user-modal-vertical input:focus,
+.add-user-modal-vertical select:focus {
+  outline: none;
+  border-color: #6366f1;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* 🔹 Date Picker */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(40%) sepia(90%) saturate(600%) hue-rotate(220deg);
+}
+
+/* 🔹 File Input */
+input[type="file"] {
+  background-color: #f3f4f6;
+  border: 1.8px dashed #a1a1aa;
+  border-radius: 10px;
+  padding: 10px;
+  color: #4b5563;
+  font-size: 15px;
+  transition: border-color 0.3s ease;
+   display: flex;
+    justify-content: center;
+  align-items: flex-start;
+}
+input[type="file"]:hover {
+  border-color: #4b49ac;
+}
+
+input[type="file"]::file-selector-button {
+  background: linear-gradient(90deg, #4b49ac, #6d6bf0);
+  color: white;
+  border: none;
+  padding: 9px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+  margin-left: 10px;
+ margin-top: 5px;
+
+  
+}
+input[type="file"]::file-selector-button:hover {
+  background: linear-gradient(90deg, #3b39a2, #5755d9);
+
+}
+
+/* 🔹 File Preview */
+.file-preview {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+
+.file-image {
+  width: 95px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+.remove-button {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+.remove-button:hover {
+  background-color: #b91c1c;
+  transform: scale(1.1);
+}
+
+/* 🔹 Password Eye Icon */
+.input-group {
+  position: relative;
+}
+.input-group .eye {
+  position: absolute;
+  right: 12px;
+  top: 38px;
+  color: #6b7280;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+.input-group .eye:hover {
+  color: #4b49ac;
+}
+
+/* 🔹 Buttons Section */
+.modal-actions-centered {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+/* 🔹 Buttons */
+.modal-actions-centered button {
+  padding: 11px 28px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  transition: all 0.25s ease;
+}
+
+/* 🔹 Primary Button */
+.btn-primary {
+  background: linear-gradient(90deg, #4b49ac, #7a79d1);
+  color: white;
+  box-shadow: 0 3px 10px rgba(75, 73, 172, 0.3);
+}
+.btn-primary:hover {
+  background: linear-gradient(90deg, #3937a3, #6564c4);
+  transform: scale(1.05);
+}
+
+/* 🔹 Cancel Button */
+.btn-cancel {
+  background: #ef4444;
+  color: white;
+  box-shadow: 0 3px 10px rgba(239, 68, 68, 0.3);
+}
+.btn-cancel:hover {
+  background: #c52f2f;
+  transform: scale(1.05);
 }

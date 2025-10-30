@@ -5,6 +5,7 @@ import LoginIcon from '@mui/icons-material/Login';
 import TextSnippetIcon from '@mui/icons-material/TextSnippet';
 import '../CssComponents/homepage.css'
 
+
 function Homepage(){
 
 
@@ -30,7 +31,10 @@ function Homepage(){
            <span className="barangay">Barangay</span> 
           <span  className="portal">Portal</span>
           </h1>
-           <p className="pcolor">Digital services  platform for the residents of Barangay Tubod, Candijay, Bohol</p>
+           <p className="pcolor"> A digital platform designed to simplify and speed up the process of
+            requesting and issuing barangay documents. <br/> Residents can easily apply for certificates such 
+            as Barangay Clearance, Certificate of Residency, and Indigency <br/>online — reducing the need for 
+            in-person visits and long waiting times.</p>
 
 
 <Link to="/login" className="login"><LoginIcon className="loginIcon" />Login</Link>

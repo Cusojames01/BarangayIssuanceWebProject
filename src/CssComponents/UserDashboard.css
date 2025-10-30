@@ -1,0 +1,110 @@
+
+nav{
+display: flex;
+align-items: center;
+justify-content: flex-start;
+flex-wrap:wrap;
+background:linear-gradient(90deg, #ffffff 0%, #047a9b 0%, #0012ae 40%, #010f85 60%, #000851 80%,  #00094c 100%  );
+margin: 0px;
+}
+.Users_Dasboard{
+    margin-left: 20px;
+}
+
+.UserDashBoardContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* left align */
+    justify-content: flex-start;
+  margin-left: 30px;
+  margin-top: 30px;
+  line-height: 2px;
+  font-family: 'Open Sans', sans-serif;
+}
+.UserDashBoardContainer p {
+    font-size: 15px;
+}
+ .UserDashBoardContainer .name{
+color:#3c2f77;
+margin-left: 10px ;
+}
+
+.hr{
+    margin-top: 50px;
+  margin-left: 30px;
+    margin-right: 30px;
+}
+.Sections{
+
+
+    display: flex;
+    align-items: center;
+    align-content:space-evenly;
+}
+
+
+.ProfileSection {
+     word-wrap: break-word;  
+  overflow-wrap: break-word;
+    width: 350px;
+    height: 170px;
+    border-bottom: 4px solid gray;
+    border-radius: 5px;
+    margin: 0 0 0 100px;
+    display: flex;
+    align-items: center; /* vertically center */
+    justify-content: flex-start; /* icon left, text right */
+    padding: 20px;
+    margin-top: 100px;
+   box-shadow: 0 6px 6px -2px rgba(91, 13, 113, 0.4);
+}.ProfileSection:hover{
+    transform: scale(1.05);
+    transition: 0.50s;
+
+}
+.ProfileContent {
+    display: flex;
+    align-items: center; /* vertically align icon and text */
+    gap: 15px; /* space between icon and text */
+    margin-bottom: 60px;
+}
+
+
+
+
+.Profiletext {
+    font-size: 24px;
+    margin: 5px;
+    font-family: 'Open Sans', sans-serif;
+}
+.description1{
+    margin-top: 130px;
+    margin-left: -200px;
+    font-size: 15px;
+
+}.description2{
+    margin-top: 140px;
+    margin-left: -310px;
+    font-size: 15px;
+
+}.description3{
+    margin-top: 130px;
+    margin-left: -212px;
+    font-size: 15px;
+
+}
+.viewprofile{
+      margin-top: 200px;
+    margin-left: -220px;
+    font-size: 15px;
+}.requestdoc{
+      margin-top: 200px;
+    margin-left: -350px;
+    font-size: 15px;
+}.viewrequest{
+     margin-top: 200px;
+    margin-left: -340px;
+    font-size: 15px;
+}
+
+

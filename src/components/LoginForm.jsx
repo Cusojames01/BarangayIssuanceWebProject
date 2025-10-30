@@ -23,7 +23,13 @@ function LoginForm(){
         try {
             const res = await axios.post('http://127.0.0.1:8000/api/login', userdata);
             const user = res.data.user;
+          const token = res.data.token;
 
+    // I-save sa localStorage para ma-access sa ibang pages
+    localStorage.setItem('user', JSON.stringify(user));
+    localStorage.setItem('token', token);
+
+    
             if (user.role === 'admin') {
                 navigate('/dashboard');
             } else {
@@ -43,23 +49,23 @@ function LoginForm(){
          
             <form onSubmit={handleSubmit} >    
                 <h2>Login</h2>
-            <div className="input-group">
+            <div className="input">
  
         
-           <input type="email" name="email" value={userdata.email} onChange={HandleChange} placeholder="Username" required/>
+           <input type="email" name="email" value={userdata.email} onChange={HandleChange} placeholder="Username"   autoComplete="off"    required/>
             </div>
 
-             <div className="input-group">
+             <div className="input">
 
-             <input type={ showpassword? "text": "password"}   name="password" value={userdata.password}   onChange={HandleChange} placeholder="Password" required/>
-             <span  className="passicon"onClick={()=>setshowpassword(!showpassword)}>
+             <input type={ showpassword? "text": "password"}   name="password" value={userdata.password}   onChange={HandleChange} placeholder="Password"      autoComplete="new-password"  required  />
+             <span  className="passicon"onClick={()=>setshowpassword(!showpassword)}>  
                  {showpassword ? <FaEyeSlash /> : <FaEye />}
              </span>
             </div >
               {error && <p className="error-message">{error}</p>}
 
             <p className='forgotpass'>Forgot Password?</p>
-        <button type="submit"  >Login</button>
+        <button className='loginbutton' type="submit"  >Login</button>
             <p className='link'>
         Don't have an account? <Link to="/registration">Sign Up</Link>
         </p>

@@ -51,7 +51,7 @@ nav a:hover {
 .logo-container .logo {
   height: 60px;
   width: 60px;
-
+margin-left: 20px;
 }
 
 .logo-container span {
